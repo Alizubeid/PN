@@ -9,7 +9,9 @@ parser.add_argument(
     default="socks5://127.0.0.1:9050",
     help="set proxy | example [protocol]://[host_or_ip]:[port]",
 )
-parser.add_argument("-f", "--file", default="./proxylist.txt", help="set proxy list file path")
+parser.add_argument(
+    "-f", "--file", help="set proxy list file path"
+)
 parser.add_argument("-t", "--timeout", type=int, help="set timeout")
 parser.add_argument("-o", "--output", help="set output online proxy list file path")
 

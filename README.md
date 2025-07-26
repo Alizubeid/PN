@@ -1,5 +1,6 @@
 # Proxy Checker
 >simple tool for test online proxies
+![](./assets/1.gif)
 ## clone the project
 ```sh
 git clone https://github.com/Alizubeid/PN.git
@@ -14,8 +15,10 @@ python main.py -h
 ```sh
 python main.py --proxy socks4://192.111.129.145:16894,socks4://199.58.184.97:4145,socks4://72.37.216.68:4145,socks4://184.181.217.201:4145
 ```
+![](./assets/2.gif)
 
 `-f`,`--file` set proxy list file path.
+![](./assets/3.gif)
 
 
 `-o`,`--output` set output file having online proxies (defualt `./online.txt`). and sorted by delay.
