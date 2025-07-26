@@ -2,13 +2,14 @@ import argparse
 import os
 from proxy_checker import ProxyChecker
 
-parser = argparse.ArgumentParser(description="Test")
+parser = argparse.ArgumentParser(description="ProxyChecker")
 parser.add_argument(
     "-p",
     "--proxy",
     default="socks5://127.0.0.1:9050",
+    help="set proxy | example [protocol]://[host_or_ip]:[port]",
 )
-parser.add_argument("-f", "--file", help="get proxy list file")
+parser.add_argument("-f", "--file", help="set proxy list file path")
 parser.add_argument("-t", "--timeout", type=int, help="set timeout")
 parser.add_argument("-o", "--output", help="set output online proxy list file path")
 
@@ -42,9 +43,9 @@ if __name__ == "__main__":
                 proxy_checker_object.set_proxy(proxy)
                 if proxy_checker_object.validation():
                     proxy_checker_object.send_requests()
-    
+
     proxy_checker_object.sort_result_by_delay()
-    if output:=args.output:
+    if output := args.output:
         proxy_checker_object.save_proxy_list(output)
     else:
         proxy_checker_object.save_proxy_list()
